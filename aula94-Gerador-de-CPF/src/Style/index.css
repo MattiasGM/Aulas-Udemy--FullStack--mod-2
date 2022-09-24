@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    --cor-primary: #f1f1f1;
+    --cor-fundo: #392e69;
+    --cor-sombra: #0f092b;
+
+    --cor-correct: #44d480;
+    --cor-incorrect: #dd9367;
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-primary);
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+
+    margin: 20px;
+    padding: 20px;
+
+    background-color: var(--cor-primary);
+    color: var(--cor-sombra);
+
+    font-size: 1.5rem;
+
+    border-radius: 20px;
+}
+/*
+main th, main td {
+    padding: 5px 30px;
+}
+*/
+
+main section form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main section form label {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: baseline;
+}
+/* 
+ul {
+    margin: 5px;
+}
+
+ul, ul li {
+    width: 100%;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+ul li {
+    background-color: #d2d2d2;
+}
+ul li:nth-child(odd) {
+    background-color: #b9b9b9;
+} */
+
+/*
+main section form input {
+    width: 400px;
+    height: 30px;
+}
+
+main section form button {
+    width: 400px;
+    height: 30px;
+
+    margin: 20px 0 0 0;
+
+    border: none;
+    border-radius: 0 10px;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-primary);
+
+    cursor: pointer;
+}
+
+    main section form button:hover {
+        background-color: var(--cor-sombra);
+    }
+    */
+
+#results {
+    padding: 10px;
+    margin: 10px;
+}
+
+#divPanel {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.correct {
+    background-color: var(--cor-correct);
+}
+
+.error {
+    background-color: var(--cor-incorrect);
+}
+
+.panel {
+    width: 250px;
+    height: 30px;
+
+    padding: 0 5px;
+    font-size: 1.3rem;
+
+    box-shadow: 2px 1px 3px #121212;
+    border: none;
+    border-radius: 10px 0;
+}
+
+.divButtons {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.button {
+    width: 50px;
+    height: 30px;
+
+    margin: 0 5px;
+
+    box-shadow: 2px 1px 3px #121212;
+    border: none;
+    border-radius: 0 10px;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-primary);
+
+    cursor: pointer;
+    transition: .3s;
+}
+.button:hover {
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+.delBtn {
+    float: right;
+
+    width: 60px;
+    height: 25px;
+    margin: 0 5px;
+
+    box-shadow: 2px 1px 3px #121212;
+    border: none;
+    border-radius: 0 10px;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-primary);
+
+    cursor: pointer;
+    transition: .3s;
+}
+.delBtn:hover {
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+.checkedTrue {
+    filter: brightness(0.4);
+}
+
+.keyboard {
+    width: 400px;
+    height: 250px;
+}
+
+.tdCalc {
+    margin: 0;
+}
+
+.trCalc {
+    margin: 0;
+}
+
+.buttonCalc, .buttonNum {
+    width: 90px;
+    height: 35px;
+
+    margin: 0;
+    border: none;
+
+    background-color: #bebebe;
+    color: #121212;
+
+    text-align: center;
+
+    cursor: pointer;
+    transition: .3s;
+}
+.buttonCalc:hover, .buttonNum:hover {
+    background-color: #969696;
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+.formLi {
+    width: 350px;
+    height: 50px;
+
+    font-size: 1.5rem;
+}
