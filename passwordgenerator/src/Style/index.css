@@ -22,10 +22,14 @@ body {
 }
 
 main, .container {
+
+    min-width: 700px;
+    min-height: 400px;
+
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
     text-align: start;
 
     margin: 20px;
@@ -57,6 +61,21 @@ main section form label {
     justify-content: center;
     align-items: baseline;
 }
+
+label {
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+}
+
+p, input {
+    margin: 0 15px;
+}
+
 /* 
 ul {
     margin: 5px;
@@ -110,6 +129,8 @@ main section form button {
 #divPanel {
     display: flex;
     flex-flow: row nowrap;
+}#divPanel p {
+    background-color: #92e2b3;
 }
 
 .correct {
@@ -132,14 +153,26 @@ main section form button {
     border-radius: 10px 0;
 }
 
+.inputNumbers {
+    width: 50px;
+    height: 30px;
+
+    padding: 0 5px;
+    font-size: 1.3rem;
+
+    box-shadow: 2px 1px 3px #121212;
+    border: none;
+    border-radius: 5px 0;
+}
+
 .divButtons {
     display: flex;
     flex-flow: row nowrap;
 }
 
 .button {
-    width: 50px;
-    height: 30px;
+    min-width: 50px;
+    min-height: 30px;
 
     margin: 0 5px;
 
@@ -223,4 +256,9 @@ main section form button {
     height: 50px;
 
     font-size: 1.5rem;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
 }
