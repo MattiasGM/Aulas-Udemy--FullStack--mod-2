@@ -3,11 +3,6 @@ export default class GeraPassword {
     randPass(length, number, upperCase, lowerCase, symbols) {
         let password = []
 
-        if(length <= 0 || !number && !upperCase && !lowerCase && !symbols) {
-            password.push('INVÁLIDO')
-            return password.join('')
-        }
-
         for(let i = 0; i < length; i++) {    
             upperCase && password.push(this.creatDigit().toUpperCase())
             lowerCase && password.push(this.creatDigit().toLowerCase())
@@ -41,6 +36,6 @@ export default class GeraPassword {
     generatePassword(digitsLength, addNumber, upperCase, lowerCase, symbols) {
         const password = this.randPass(digitsLength, addNumber, upperCase, lowerCase, symbols)
 
-        return password
+        return password || 'INVÁLIDO'
     }
 }
