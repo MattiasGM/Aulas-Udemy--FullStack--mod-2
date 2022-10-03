@@ -1,53 +1,45 @@
 export default class GeraPassword {
 
     randPass(length, number, upperCase, lowerCase, symbols) {
-        let password = ''
-        let index = 0
+        let password = []
 
-        while(index < length) {
-            if(!number && !upperCase && !lowerCase && !symbols) return password = INVÁLIDO
-            if(upperCase) {
-                password += this.creatDigit().toUpperCase()
-                index++
-                if(index >= length) break
-            }
-            if(lowerCase) {
-                password += this.creatDigit().toLowerCase()
-                index++
-                if(index >= length) break
-            }
-            if(number) {
-                password += String(Math.floor(Math.random() * 9))
-                index++
-                if(index >= length) break
-            }
-            if(symbols) {
-                password += this.creatSymbol()
-                index++
-                if(index >= length) break
-            }
+        if(length <= 0 || !number && !upperCase && !lowerCase && !symbols) {
+            password.push('INVÁLIDO')
+            return password.join('')
         }
-        return password
+
+        for(let i = 0; i < length; i++) {    
+            upperCase && password.push(this.creatDigit().toUpperCase())
+            lowerCase && password.push(this.creatDigit().toLowerCase())
+            number && password.push(String(Math.floor(Math.random() * 9)))
+            symbols && password.push(this.creatSymbol())
+        }
+        
+        return password.join('').slice(0, length)
+    }
+
+    rand(number) {
+        return Number(Math.floor(Math.random() * number))
     }
 
     creatSymbol() {
-        let symbol = ['!', '@', '#', '$', '%']
+        const symbol = ['!', '@', '#', '$', '%']
 
-        const rand = Number(Math.floor(Math.random() * 5))
+        const rand = this.rand(5)
 
         return symbol[rand]
     }
 
     creatDigit() {
-        let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-        const rand = Number(Math.floor(Math.random() * 26))
+        const rand = this.rand(26)
 
         return alphabet[rand]
     }
 
     generatePassword(digitsLength, addNumber, upperCase, lowerCase, symbols) {
-        let password = this.randPass(digitsLength, addNumber, upperCase, lowerCase, symbols)
+        const password = this.randPass(digitsLength, addNumber, upperCase, lowerCase, symbols)
 
         return password
     }

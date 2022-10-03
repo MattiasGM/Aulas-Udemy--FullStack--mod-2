@@ -14,27 +14,24 @@ import './style/index.css'
     panel.innerHTML = `Password: Selecione as opções`
     container.appendChild(panel)
 
-    const numbersOfCharacters = mount(container, 'number', 'numbersOfCharacters', 'inputNumbers', 'Quantidade de caracteres')
-    const addNumbers = mount(container, 'checkbox', 'addNumbers', 'checkbox', 'Adicionar números')
-    const upperCase = mount(container, 'checkbox', 'upperCase', 'checkbox', 'Letras maiúsculas')
-    const lowerCase = mount(container, 'checkbox', 'lowerCase', 'checkbox', 'Letras minúsculas')
-    const symbols = mount(container, 'checkbox', 'symbols', 'checkbox', 'Simbolos')
+    mount(container, 'number', 'numbersOfCharacters', 'inputNumbers', 'Quantidade de caracteres')   // creat input number of characters
+    mount(container, 'checkbox', 'addNumbers', 'checkbox', 'Adicionar números')                     // creat input check add Numbers
+    mount(container, 'checkbox', 'upperCase', 'checkbox', 'Letras maiúsculas')                      // creat input check add Upper Case
+    mount(container, 'checkbox', 'lowerCase', 'checkbox', 'Letras minúsculas')                      // creat input check add Lower Case
+    mount(container, 'checkbox', 'symbols', 'checkbox', 'Simbolos')                                 // creat input check add Symbols
 
     const generater = creat('input', 'submit', 'button', 'Gerar Senha', 'button')
     container.appendChild(generater)
 
     document.addEventListener('click', e => {
         if(e.target.id === 'submit') {
-            const container = document.querySelector('.container')
-            const panel1 = document.querySelector('#divPanel')
             const numbersOfCharacters = Number(document.querySelector('#numbersOfCharacters').value)
-            const addNumbers = document.querySelector('#addNumbers')
-            const upperCase = document.querySelector('#upperCase')
-            const lowerCase = document.querySelector('#lowerCase')
-            const symbol = document.querySelector('#symbol')
+            const addNumbers = document.querySelector('#addNumbers').checked
+            const upperCase = document.querySelector('#upperCase').checked
+            const lowerCase = document.querySelector('#lowerCase').checked
+            const symbol = document.querySelector('#symbols').checked
 
-            panel1.innerHTML = `Password: <p>${newPassword.generatePassword(numbersOfCharacters, addNumbers.checked, upperCase.checked, lowerCase.checked, symbol.checked)}</p>`
-            container.appendChild(panel)
+            panel.innerHTML = `Password: <p>${newPassword.generatePassword(numbersOfCharacters, addNumbers, upperCase, lowerCase, symbol)}</p>`
             
         }
     })
